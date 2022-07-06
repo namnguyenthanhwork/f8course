@@ -24,16 +24,17 @@ body {
     margin-bottom: 20px;
     min-width: 400px;
     max-width: 500px;
+    overflow: hidden;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    transition: all 0.5s linear;
-    -webkit-transition: all 0.5s linear;
-    -moz-transition: all 0.5s linear;
-    -ms-transition: all 0.5s linear;
-    -o-transition: all 0.5s linear;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
 }
 
 @keyframes slideInLeft {
@@ -56,12 +57,29 @@ body {
     }
 }
 
-@keyframes fadeOut {
+@keyframes slideInRight {
+    from {
+        transform: translateX(calc(0 + 200px));
+        -webkit-transform: translateX(calc(0 + 200px));
+        -moz-transform: translateX(calc(0 + 200px));
+        -ms-transform: translateX(calc(0 + 200px));
+        -o-transform: translateX(calc(0 + 200px));
+    }
+
     to {
-        opacity: 0;
+        transform: translateX(calc(100% + 40px));
+        -webkit-transform: translateX(calc(100% + 40px));
+        -moz-transform: translateX(calc(100% + 40px));
+        -ms-transform: translateX(calc(100% + 40px));
+        -o-transform: translateX(calc(100% + 40px));
     }
 }
 
+@keyframes progress {
+    100% {
+        right: 100%;
+    }
+}
 .toast-success {
     border-left: 5px solid #0f0;
 }
@@ -126,6 +144,30 @@ body {
     cursor: pointer;
     font-size: 20px;
     margin-left: 10px;
+}
+
+.toast .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: #ddd;
+}
+
+.toast .progress:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #4070f4;
+}
+
+.progress.active:before {
+    animation: progress var(--time) linear forwards;
+    -webkit-animation: progress var(--time) linear forwards;
 }
 
 .btn {

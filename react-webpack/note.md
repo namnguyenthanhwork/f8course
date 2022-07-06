@@ -1,0 +1,23 @@
+- NPM
+    - Project scope: cài project vào 1 dự án cụ thể
+        - npm install react react-dom => lưu vào dependencies
+        - npm ireact react-dom => lưu vào dependencies
+
+        - npm install react react-dom --save-dev => lưu vào devDependencies
+        - npm i react react-dom --save-dev => lưu vào devDependencies
+        
+        - npm uninstall react react-dom
+    - Global scope: 
+        - Cài vào thư mục account login vào máy tính cá nhân
+        - Được sử dụng khi dự án không phụ thuộc vào thư viện đó
+        - npm i --global create-react-app
+        - npm i -g create-react-app
+        - npm uninstall -g create-react-app
+- NPX: cài node => NPM, NPX
+    - Tại sao dùng NPX ?
+        - Giúp không cài các thư viện lên máy
+        - Luôn kéo ver mới nhất từ npm về khi local hoặc global không có
+    - Gặp lỗi khi create-react-app
+- YARN & NPM
+- YARN install
+- Lưu ý: luôn bật development server (npm start || yarn start)

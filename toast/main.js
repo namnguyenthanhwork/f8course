@@ -4,9 +4,10 @@ function toast({
     type = 'success',
     duration = 3000
 }) {
-    const main = document.getElementById('toast');
+    const main = document.getElementById('toast')
     if (main) {
         const toast = document.createElement('div');
+
         const icons = {
             success: 'fas fa-check',
             info: 'fas fa-info',
@@ -14,9 +15,10 @@ function toast({
             error: 'fas fa-exclamation-triangle'
         }
         const delay = (duration / 1000).toFixed(2);
-        const timeAnimation = 1000;
+        const timeAnimation = 400;
         toast.classList.add('toast', `toast-${type}`);
-        toast.style.animation = `slideInLeft ease .6s, fadeOut linear ${timeAnimation/1000}s ${delay}s forwards`
+        toast.style.animation = `slideInLeft ease .5s, slideInRight linear ${timeAnimation/1000}s ${delay}s forwards`
+
         toast.innerHTML = `
                 <div class="toast__icon"><i class="${icons[type]}"></i></div>
                 <div class="toast__body">
@@ -36,22 +38,4 @@ function toast({
             clearTimeout(autoRemoveID)
         }
     }
-}
-
-function showSuccessToast() {
-    toast({
-        title: 'Thành công !',
-        message: 'Bạn đã đăng ký thành công',
-        type: 'success',
-        duration: 3000
-    })
-}
-
-function showWarningToast() {
-    toast({
-        title: 'Cảnh báo lỗi !',
-        message: 'Đang bảo trì hệ thống',
-        type: 'warning',
-        duration: 1000
-    })
 }
